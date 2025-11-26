@@ -1,15 +1,8 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-// import Chart from '../components/chart.astro';
 import Hero from '../components/Hero.astro';
-import BarChart from "../components/BarChart.svelte"
-import LineChart from "../components/LineChart.svelte"
-
-import BarChart2 from "../components/BarChart2.svelte"
-import LineChart2 from "../components/LineChart2.svelte"
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BarChart2 from "../components/ExampleBarChart.svelte"
+import LineChart2 from "../components/ExampleLineChart.svelte"
 ---
 
 <Layout>
@@ -19,9 +12,8 @@ import LineChart2 from "../components/LineChart2.svelte"
 		<h2 class="font-bold pb-4 text-4xl">How well do we think we know what we eat most often?</h2>
 		<p class="text-xl pb-4">Accuracy of guesses tends to go <strong>down</strong> as you have the food more frequently</p>
 		<div class="flex">
-
-			<BarChart client:load/>
-			<LineChart client:load/>
+		<LineChart2 client:load/>
+		<BarChart2 client:load/>
 		</div>
 	</section>
 
@@ -34,8 +26,8 @@ import LineChart2 from "../components/LineChart2.svelte"
 		<p class="text-xl pb-4">When foods have <strong>X macro</strong> we see preference drop by <strong>%Y</strong> on average</p>
 		<div class="flex">
 
+			<BarChart2 client:load/>
 			<LineChart2 client:load/>
-			<BarChart client:load/>
 		</div>
 	</section>
 
@@ -46,9 +38,8 @@ import LineChart2 from "../components/LineChart2.svelte"
 			Participants who had never had a particular food were worst at guessing <strong>x macro</strong>
 		</p>
 		<div class="flex">
-
+			<LineChart2 client:load/>
 			<BarChart2 client:load/>
-			<LineChart client:load/>
 		</div>
 	</section>
 
@@ -62,8 +53,8 @@ import LineChart2 from "../components/LineChart2.svelte"
 		<p class="text-xl pb-4">Participants with <strong>higher/lowe</strong> confidence were <strong>more/less accurate</strong></p>
 		<div class="flex">
 
-			<LineChart client:load/>
-			<BarChart client:load/>
+			<BarChart2 client:load/>
+			<LineChart2 client:load/>
 		</div>
 	</section>
 
@@ -73,9 +64,8 @@ import LineChart2 from "../components/LineChart2.svelte"
 		<h2 class="font-bold pb-4 text-4xl">Is this a learnable skill?</h2>
 		<p class="text-xl pb-4">Accuracy of guesses went <strong>up/down</strong> as participants made more guesses</p>
 		<div class="flex">
-
-			<BarChart2 client:load/>
 			<LineChart2 client:load/>
+			<BarChart2 client:load/>
 		</div>
 	</section>
 

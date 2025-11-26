@@ -1,5 +1,8 @@
 ---
 import "../styles/global.css"
+
+const {theme="emerald"} = Astro.props
+
 ---
 <!doctype html>
 <html lang="en">
@@ -10,7 +13,7 @@ import "../styles/global.css"
 		<meta name="generator" content={Astro.generator} />
 		<title>CPSC-482 Final Project</title>
 	</head>
-	<body data-theme="emerald">
+	<body data-theme={theme}>
 		<slot />
 	</body>
 </html>
