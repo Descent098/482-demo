@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Map from "../components/WorldMap.svelte"
 import BarChart from "../components/BarChart.svelte"
+import BoxChart from "../components/BoxChart.svelte"
 import LineChart from "../components/LineChart.svelte"
 import ScatterPlot from "../components/ScatterPlot.svelte"
 ---
@@ -85,6 +86,28 @@ import ScatterPlot from "../components/ScatterPlot.svelte"
             width={1200}
             height={600}
             dotColors={"Reds"}
+        />
+    </div>
+
+    <div class="bg-white p-6">
+        <BoxChart 
+            filename="roman-ampitheatres-processed.xlsx" 
+            sheetIndex={4}
+            title="Ampitheatre Capacity Across Time Periods in the Roman Empire" 
+            subtitle="The Flavian Period had the Widest Range of Capacities" 
+            xAxisDataField="capacity",
+            xAxisLabel="Capacity (people)",
+            yAxisDataField="chronogroup",
+            fillDataField="chronogroup"
+            yAxisLabel="Period",
+            styleOverrides={{fontSize:"11"}}
+            width={1200}
+            colorconfig={{
+                scheme:"tableau10",
+                type:"categorical",
+                legend: true,
+            }}
+            client:load
         />
     </div>
 

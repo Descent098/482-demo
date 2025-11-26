@@ -70,7 +70,7 @@
     projection.fitExtent(
       [
         [20, 20],
-        [780, 580],
+        [1250, 580],
       ],
       //@ts-ignore
       pointsGeoJSON,
