@@ -5,10 +5,10 @@ import BarChart2 from "../components/ExampleBarChart.svelte"
 import LineChart2 from "../components/ExampleLineChart.svelte"
 ---
 
-<Layout>
+<Layout theme="aqua">
 	<Hero />
 	<!--Does the frequency with which a food is consumed affect the accuracy of macro estimation? -->
-	<section class="bg-white p-16 flex flex-col">
+	<section class="p-16 flex flex-col">
 		<h2 class="font-bold pb-4 text-4xl">How well do we think we know what we eat most often?</h2>
 		<p class="text-xl pb-4">Accuracy of guesses tends to go <strong>down</strong> as you have the food more frequently</p>
 		<div class="flex">
@@ -32,7 +32,7 @@ import LineChart2 from "../components/ExampleLineChart.svelte"
 	</section>
 
 	<!--If you have never had a particular food, which particular macro are people worst at guessing (carbs, protein or fat)? -->
-	<section class="bg-white p-16 flex flex-col">
+	<section class="p-16 flex flex-col">
 		<h2 class="font-bold pb-4 text-4xl">What's hardest to guess?</h2>
 		<p class="text-xl pb-4">
 			Participants who had never had a particular food were worst at guessing <strong>x macro</strong>
@@ -60,7 +60,7 @@ import LineChart2 from "../components/ExampleLineChart.svelte"
 
 
 	<!--Does estimation accuracy improve over time as participants track more foods? -->
-	<section class="bg-white p-16 flex flex-col">
+	<section class="p-16 flex flex-col">
 		<h2 class="font-bold pb-4 text-4xl">Is this a learnable skill?</h2>
 		<p class="text-xl pb-4">Accuracy of guesses went <strong>up/down</strong> as participants made more guesses</p>
 		<div class="flex">
