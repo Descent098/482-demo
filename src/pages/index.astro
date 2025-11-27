@@ -6,7 +6,7 @@ import LineChart2 from "../components/examples/ExampleLineChart.svelte"
 import Question5Chart from "../components/project-charts/kieran.svelte"
 ---
 
-<Layout theme="aqua">
+<Layout theme="emerald">
 	<Hero />
 	<!--Does the frequency with which a food is consumed affect the accuracy of macro estimation? -->
 	<section class="p-16 flex flex-col">
@@ -61,7 +61,7 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 
 
 	<!--Does estimation accuracy improve over time as participants track more foods? -->
-	<section class="p-16 flex flex-col bg-accent-400 text-white">
+	<section class="p-16 flex flex-col bg-accent-400">
 		<h2 class="font-bold pb-4 text-4xl">Is Estimation A Learnable Skill?</h2>
 		<p class="text-xl pb-4">Accuracy of guesses was <strong>highly dependent</strong> on <strong>macro</strong> and <strong>participant</strong></p>
 		<div class="flex flex-col">
@@ -73,6 +73,9 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 					xAxisLabel="Batch"
 					yAxisLabel="Average Difference from Actual (calories, higher is worse)" 
 					domain={[0,150]}
+					width={1000}
+					strokeWidth={3}
+					styleOverrides={{fontSize:"12"}}
 					client:load
 				/>
 
@@ -84,6 +87,9 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
 					domain={[0,35]}
 					marginTop={25}
+					width={1000}
+					strokeWidth={3}
+					styleOverrides={{fontSize:"12"}}
 					client:load
 				/>
 			</div>
@@ -96,6 +102,9 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
 					domain={[0,10]}
 					marginTop={25}
+					width={1000}
+					strokeWidth={3}
+					styleOverrides={{fontSize:"12"}}
 					client:load
 				/>
 				<Question5Chart
@@ -106,6 +115,9 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
 					domain={[0,15]}
 					marginTop={25}
+					width={1000}
+					strokeWidth={3}
+					styleOverrides={{fontSize:"12"}}
 					client:load
 				/>
 			</div>
