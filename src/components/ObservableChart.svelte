@@ -24,8 +24,12 @@
         plotEl.innerHTML = ""; // Reset element state
 
         // Build up element peice by peice
-        plotEl.appendChild(titleElement);
-        plotEl.appendChild(subTitleElement);
+        if (title){
+            plotEl.appendChild(titleElement);
+        }
+        if (subtitle){
+            plotEl.appendChild(subTitleElement);
+        }
         if (plot.innerHTML !== undefined) {
             plotEl.appendChild(plot);
         }

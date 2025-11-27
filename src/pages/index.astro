@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import BarChart2 from "../components/ExampleBarChart.svelte"
-import LineChart2 from "../components/ExampleLineChart.svelte"
+import BarChart2 from "../components/examples/ExampleBarChart.svelte"
+import LineChart2 from "../components/examples/ExampleLineChart.svelte"
+import Question5Chart from "../components/project-charts/kieran.svelte"
 ---
 
 <Layout theme="aqua">
@@ -60,13 +61,55 @@ import LineChart2 from "../components/ExampleLineChart.svelte"
 
 
 	<!--Does estimation accuracy improve over time as participants track more foods? -->
-	<section class="p-16 flex flex-col">
-		<h2 class="font-bold pb-4 text-4xl">Is this a learnable skill?</h2>
-		<p class="text-xl pb-4">Accuracy of guesses went <strong>up/down</strong> as participants made more guesses</p>
-		<div class="flex">
-			<LineChart2 client:load/>
-			<BarChart2 client:load/>
-		</div>
+	<section class="p-16 flex flex-col bg-accent-400 text-white">
+		<h2 class="font-bold pb-4 text-4xl">Is Estimation A Learnable Skill?</h2>
+		<p class="text-xl pb-4">Accuracy of guesses was <strong>highly dependent</strong> on <strong>macro</strong> and <strong>participant</strong></p>
+		<div class="flex flex-col">
+			<div class="grid md:grid-cols-2">
+				<Question5Chart
+					title="Calories"
+					subtitle="Most Participants did better than where they started"
+					yAxisDataField="cals_diff"
+					xAxisLabel="Batch"
+					yAxisLabel="Average Difference from Actual (calories, higher is worse)" 
+					domain={[0,150]}
+					client:load
+				/>
+
+				<Question5Chart
+					title="Carbs"
+					subtitle="Results were Highly Varied"
+					yAxisDataField="carbs_diff"
+					xAxisLabel="Batch"
+					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
+					domain={[0,35]}
+					marginTop={25}
+					client:load
+				/>
+			</div>
+			<div class="grid md:grid-cols-2">
+				<Question5Chart
+					title="Protein"
+					subtitle="Results were Highly Varied"
+					yAxisDataField="protein_diff"
+					xAxisLabel="Batch"
+					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
+					domain={[0,10]}
+					marginTop={25}
+					client:load
+				/>
+				<Question5Chart
+					title="Fats"
+					subtitle="Most Participants Improved Their Guesses Over Time"
+					yAxisDataField="fats_diff"
+					xAxisLabel="Batch"
+					yAxisLabel="Average Difference from Actual (g, higher is worse)" 
+					domain={[0,15]}
+					marginTop={25}
+					client:load
+				/>
+			</div>
+		</div>	
 	</section>
 
 </Layout>
