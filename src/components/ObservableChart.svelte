@@ -19,7 +19,7 @@
         titleElement.innerHTML = title;
 
         const subTitleElement = document.createElement("h4");
-        subTitleElement.classList.add("text-md");
+        subTitleElement.classList.add("text-md", "max-w-[50vw]");
         subTitleElement.innerHTML = subtitle;
         plotEl.innerHTML = ""; // Reset element state
 

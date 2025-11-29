@@ -30,7 +30,7 @@ export async function getDataFromSpreadsheet(filename:string){
  */
 export async function parseDataFromWorksheet(workbook:XLSX.WorkBook, sheetName:string="", sheetIndex:number=0){
     if (sheetName ===""){
-        sheetName = workbook.SheetNames[sheetIndex] // Load first sheet
+        sheetName = workbook.SheetNames[sheetIndex] // Load from sheet index instead of name
     }
 
     const worksheet = workbook.Sheets["{{sheet}}"] ?? workbook.Sheets[sheetName];

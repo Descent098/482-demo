@@ -3,18 +3,28 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import BarChart2 from "../components/examples/ExampleBarChart.svelte"
 import LineChart2 from "../components/examples/ExampleLineChart.svelte"
+import Question1Bars from "../components/project-charts/mahrooj/bars.svelte"
+import Question3Heatmap from "../components/project-charts/savitur/heatmap.svelte"
+import Question3HorizontalBar from "../components/project-charts/savitur/horizontalBar.svelte"
+import Question4calorieError from "../components/project-charts/srijita/calorieError.svelte"
+import Question4sugarError from "../components/project-charts/srijita/sugarError.svelte"
+import Question4carbsError from "../components/project-charts/srijita/carbsError.svelte"
+import Question4proteinError from "../components/project-charts/srijita/proteinError.svelte"
+import Question4fatsError from "../components/project-charts/srijita/fatsError.svelte"
+import Question4StackedChart from "../components/project-charts/srijita/stacked.svelte"
+import Question4Heatmap from "../components/project-charts/srijita/heatmap.svelte"
+import Question4Line from "../components/project-charts/srijita/lines.svelte"
 import Question5Chart from "../components/project-charts/kieran.svelte"
 ---
 
 <Layout theme="emerald">
 	<Hero />
 	<!--Does the frequency with which a food is consumed affect the accuracy of macro estimation? -->
-	<section class="p-4 md:p-16 flex flex-col">
+	<section class="p-4 md:p-16 flex flex-col items-center">
 		<h2 class="font-bold pb-4 text-4xl">How well do we think we know what we eat most often?</h2>
-		<p class="text-xl pb-4">Accuracy of guesses tends to go <strong>down</strong> as you have the food more frequently</p>
-		<div class="flex">
-		<LineChart2 client:load/>
-		<BarChart2 client:load/>
+		<!-- <p class="text-xl pb-4">Accuracy of guesses tends to go <strong>down</strong> as you have the food more frequently</p> -->
+		<div class="w-[70%]">
+		<Question1Bars client:load/>
 		</div>
 	</section>
 
@@ -32,31 +42,48 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 		</div>
 	</section>
 
-	<!--If you have never had a particular food, which particular macro are people worst at guessing (carbs, protein or fat)? -->
+	<!-- Does the user’s perception category of a food influence how accurately they estimate its macros?? -->
 	<section class="p-4 md:p-16 flex flex-col">
-		<h2 class="font-bold pb-4 text-4xl">What's hardest to guess?</h2>
+		<h2 class="font-bold pb-4 text-4xl">Does perception influence guesses?</h2>
 		<p class="text-xl pb-4">
-			Participants who had never had a particular food were worst at guessing <strong>x macro</strong>
+			
 		</p>
 		<div class="flex">
-			<LineChart2 client:load/>
-			<BarChart2 client:load/>
+			<Question3Heatmap title="Macro Estimation Error Based On Users' Perception of Food Items" subtitle="Users were most accurate when guessing staple foods, but made large mistakes in fat and protein estimates for foods they hated." client:load/>
+			<Question3HorizontalBar title="Average Calorie Estimation Error Based on Users' Perceptions of Selected Food Items" subtitle="Users struggled most with meal food items but were significantly more accurate with healthy foods." client:load/>
 		</div>
 	</section>
 
 
-	<!--Does the confidence level of macro guess have any correlation with the user’s guess accuracy? -->
+	<!-- How does the frequency with which a food is consumed affect the accuracy of macro estimation? -->
 	<section class="p-4 md:p-16 bg-accent flex flex-col"
 		style="background-color: rgb(226, 226, 226);
 		color:black"
 	>
-		<h2 class="font-bold pb-4 text-4xl">Does confidence kill accuracy?</h2>
-		<p class="text-xl pb-4">Participants with <strong>higher/lowe</strong> confidence were <strong>more/less accurate</strong></p>
+		<h2 class="font-bold pb-4 text-4xl">Does frequency of cunsumption effect estimation accuracy?</h2>
+		<!-- <p class="text-xl pb-4">Participants with <strong>higher/lowe</strong> confidence were <strong>more/less accurate</strong></p> -->
 		<div class="flex">
 
-			<BarChart2 client:load/>
-			<LineChart2 client:load/>
+			<Question4calorieError client:load/>
+			<Question4sugarError client:load/>
 		</div>
+		<div class="flex mt-12">
+			<Question4carbsError client:load/>
+			<Question4proteinError client:load/>
+		</div>
+		<div class="flex mt-12">
+			<Question4fatsError client:load/>
+			<Question4StackedChart client:load/>
+		</div>
+		<div class="flex mt-12 justify-center items-center w-full p-5">
+			<Question4Heatmap client:load/>
+		</div>
+
+		<div class="flex mt-12">
+			<Question4Line client:load/>
+			<!-- <Question4StackedChart client:load/> -->
+		</div>
+		
 	</section>
 
 
