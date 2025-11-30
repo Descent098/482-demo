@@ -9,8 +9,8 @@
   let initialized = $state(false)
 
 
-  const title="Which Combinations Are Hardest to Estimate?"
-  const subtitle="Overall, calories are seen as the most difficult macro to estimate, specifically when it comes to food items that people have never consumed before."
+  const title="Which Macronutrients Are Hardest to Estimate?"
+  const subtitle="Overall, carbohydrates are seen as the most difficult macro to estimate, specifically when it comes to food items that people consume on a weekly basis."
   const width = 1000
   const height= 400
 
@@ -47,15 +47,13 @@
 
 
   // Plot cell here
-  
- const macros = ['Calories', 'Sugar', 'Carbs', 'Protein', 'Fats'];
+  const macros = ['Sugar', 'Carbs', 'Protein', 'Fats'];
   
   const heatmapData = [];
   freqOrder.forEach(freq => {
     const freqData = cleanData.filter(d => d['frequency (select)'] === freq);
     if (freqData.length > 0) {
       heatmapData.push(
-        { frequency: freq, macro: 'Calories', error: d3.mean(freqData, d => d.CaloriesError), count: freqData.length },
         { frequency: freq, macro: 'Sugar', error: d3.mean(freqData, d => d.SugarError), count: freqData.length },
         { frequency: freq, macro: 'Carbs', error: d3.mean(freqData, d => d.CarbsError), count: freqData.length },
         { frequency: freq, macro: 'Protein', error: d3.mean(freqData, d => d.ProteinError), count: freqData.length },
@@ -64,9 +62,9 @@
     }
   });
   
-  plot= Plot.plot({
-    height:height,
-    width:width,
+  plot = Plot.plot({
+    width: 1000,
+    height: 400,
     marginLeft: 100,
     marginBottom: 110,
     style: { fontSize: 14 },
@@ -96,7 +94,7 @@
       Plot.text(heatmapData, {
         x: "frequency",
         y: "macro",
-        text: d => d.error.toFixed(0),
+        text: d => d.error.toFixed(1),
         fill: d => d.error > 40 ? "white" : "black",
         fontSize: 11
       })
