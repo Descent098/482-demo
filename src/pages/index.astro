@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro';
 import BarChart2 from "../components/examples/ExampleBarChart.svelte"
 import LineChart2 from "../components/examples/ExampleLineChart.svelte"
 import Question1Bars from "../components/project-charts/mahrooj/bars.svelte"
+import Question2 from "../components/project-charts/nabihah/chart.svelte"
 import Question3Heatmap from "../components/project-charts/savitur/heatmap.svelte"
 import Question3HorizontalBar from "../components/project-charts/savitur/horizontalBar.svelte"
 import Question4calorieError from "../components/project-charts/srijita/calorieError.svelte"
@@ -35,10 +36,9 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 	<!-- Do foods with a high number of certain macros have a correlation with the preference or frequency the food is consumed -->
 		<h2 class="font-bold pb-4 text-4xl">Does food composition effect preference or frequency</h2>
 		<p class="text-xl pb-4">When foods have <strong>X macro</strong> we see preference drop by <strong>%Y</strong> on average</p>
-		<div class="flex">
+		<div class="w-full">
 
-			<BarChart2 client:load/>
-			<LineChart2 client:load/>
+			<Question2 client:load/>
 		</div>
 	</section>
 
