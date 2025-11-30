@@ -100,7 +100,8 @@
       Plot.cell(heatmapData, {
         x: "macro",
         y: "perception",
-        fill: "avg_error"
+        fill: "avg_error",
+        tip:true
       }),
       Plot.text(heatmapData, {
         x: "macro",

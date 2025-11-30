@@ -86,7 +86,8 @@
       Plot.barX(avgData, {
         y: "perception",
         x: "avg_error",
-        fill: "avg_error"
+        fill: "avg_error",
+        tip:true
       }),
       Plot.text(avgData, {
         y: "perception",

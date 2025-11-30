@@ -87,7 +87,8 @@
             y: "macro",
             stroke: "type",
             r: 5,
-            title: d => `${d.type}: ${d[macro]}${d.n_matches ? ` (n=${d.n_matches})` : ""}`
+            title: d => `${d.food} (${d.type}): ${d.macro}${macro==="calories"?"cals":"g"}${d.n_matches ? ` (n=${d.n_matches})` : ""}`,
+            tip:true
         })
         ],
         color: { legend: true },
