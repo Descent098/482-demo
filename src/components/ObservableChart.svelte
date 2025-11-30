@@ -10,6 +10,7 @@
         // Optional Fields
         title = "", // The title of the chart
         subtitle = "", // The subtitle of the chart
+        center=false
     } = $props();
 
     function updateComponent() {
@@ -39,4 +40,4 @@
     onMount(updateComponent);
 </script>
 
-<div class="w-full flex flex-col gap-1" bind:this={plotEl}></div>
+<div class={`w-full flex flex-col gap-1 ${center?"items-center":""}`} bind:this={plotEl}></div>

@@ -10,6 +10,7 @@
   let fatsPlot = $derived(renderMacroPlot("fats", "Fats (g)"))
   let carbsPlot = $derived(renderMacroPlot("carbs", "Carbs (g)"))
   let sugarsPlot = $derived(renderMacroPlot("Sugar", "Sugars (g)"))
+  let proteinsPlot = $derived(renderMacroPlot("protein", "Protein (g)"))
   let allFrequenciesChecked = $state(true)
   let actual
   let guess
@@ -116,7 +117,8 @@
 
 {#if initialized}
 
-<fieldset class="bg-base-100 border-base-300 rounded-box w-full border p-3 grid grid-cols-7 gap-1 m">
+<fieldset class="bg-base-100 border-base-300 rounded-box w-full border p-3 
+    grid gap-1 grid-cols-1 md:grid-cols-4 lg:grid-cols-7 lg:justify-items-center">
   <legend class="fieldset-legend mt-12">Frequency</legend>
   <label class="label">
     <input type="checkbox" bind:checked={allFrequenciesChecked} class="checkbox" name="all" onchange={()=>toggleAllSelectedFrequencies()}/>
@@ -138,6 +140,9 @@
 <div class="flex flex-col md:flex-row">
     <ObservableChart plot={carbsPlot} title="Actual vs. Average Guess (Carbohydrates)"/>
     <ObservableChart plot={sugarsPlot} title="Actual vs. Average Guess (Sugars)" />
+</div>
+<div class="flex justify-center align-center w-full items-center">
+    <ObservableChart plot={proteinsPlot} title="Actual vs. Average Guess (Protein)" center={true}/>
 </div>
 {:else}
 <div class="skeleton min-h-[400px] min-w-[400px]"></div>
