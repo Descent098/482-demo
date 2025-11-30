@@ -109,7 +109,7 @@
 </script>
 
 {#if initialized}
-<ObservableChart {plot} {title} {subtitle}/>
+<ObservableChart {plot} {title} {subtitle} center={true}/>
 {:else}
 <div class={`skeleton w-${width?`[${width}px]`:"[500px]"} h-${height?`[${height}px]`:"[500px]"} ` }
   style="min-height:400px"
