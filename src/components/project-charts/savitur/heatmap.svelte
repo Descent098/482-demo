@@ -92,7 +92,7 @@
     marginLeft: 150,
     marginBottom: 50,
     grid: true,
-    color: { scheme: "YlOrRd", label: "Average Error (grams)" },
+    color: { scheme: "YlOrRd", label: "Average Error (grams)", legend:true},
     x: { label: "Macro (grams)" },
     y: { label: "Perception Category" },
 

@@ -85,7 +85,7 @@
     marks: [
       Plot.barX(avgData, {
         y: "perception",
-        x: "avg_error",
+        x: d => d.avg_error + 5,
         fill: "avg_error",
         tip:true
       }),
