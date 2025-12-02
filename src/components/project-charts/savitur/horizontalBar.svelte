@@ -80,12 +80,13 @@
     x: { label: "Average Calorie Error" },
     y: { label: "Perception Category", domain: avgData.map(d => d.perception)},
 
-    color: { scheme: "Blues" },
+    color: { scheme: "Blues" ,
+    },
 
     marks: [
       Plot.barX(avgData, {
         y: "perception",
-        x: d => d.avg_error + 5,
+        x: d => d.avg_error - 5,
         fill: "avg_error",
         tip:true
       }),

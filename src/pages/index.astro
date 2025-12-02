@@ -20,8 +20,23 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 
 <Layout theme="emerald">
 	<Hero />
+
+	<section class="p-4 md:p-16  flex flex-col"
+		
+	>	
+	<!-- Do foods with a high number of certain macros have a correlation with the preference or frequency the food is consumed -->
+		<h2 class="font-bold pb-4 text-4xl">Does food composition effect preference or frequency</h2>
+		<!-- <p class="text-xl pb-4">When foods have <strong>X macro</strong> we see preference drop by <strong>%Y</strong> on average</p> -->
+		<div class="w-full">
+
+			<Question2 client:load/>
+		</div>
+	</section>
+
 	<!--Does the frequency with which a food is consumed affect the accuracy of macro estimation? -->
-	<section class="p-4 md:p-16 flex flex-col items-center">
+	<section class="p-4 md:p-16 flex flex-col items-center bg-accent"
+	style="background-color: rgb(226, 226, 226);
+		color:black">
 		<h2 class="font-bold pb-4 text-4xl">How well do we think we know what we eat most often?</h2>
 		<!-- <p class="text-xl pb-4">Accuracy of guesses tends to go <strong>down</strong> as you have the food more frequently</p> -->
 
@@ -29,18 +44,7 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 
 	</section>
 
-	<section class="p-4 md:p-16 bg-accent flex flex-col"
-		style="background-color: rgb(226, 226, 226);
-		color:black"
-	>	
-	<!-- Do foods with a high number of certain macros have a correlation with the preference or frequency the food is consumed -->
-		<h2 class="font-bold pb-4 text-4xl">Does food composition effect preference or frequency</h2>
-		<p class="text-xl pb-4">When foods have <strong>X macro</strong> we see preference drop by <strong>%Y</strong> on average</p>
-		<div class="w-full">
 
-			<Question2 client:load/>
-		</div>
-	</section>
 
 	<!-- Does the user’s perception category of a food influence how accurately they estimate its macros?? -->
 	<section class="p-4 md:p-16 flex flex-col">
@@ -50,7 +54,7 @@ import Question5Chart from "../components/project-charts/kieran.svelte"
 		</p>
 		<div class="flex">
 			<Question3Heatmap title="Macro Estimation Error Based On Users' Perception of Food Items" subtitle="Users generally had the most difficulty estimating the carbohydrate content of food items, regardless of how they perceived a particular food item" client:load/>
-			<Question3HorizontalBar title="Average Calorie Estimation Error Based on Users' Perceptions of Selected Food Items" subtitle="Users struggled most with meal food items but were significantly more accurate with healthy foods." client:load/>
+			<Question3HorizontalBar title="Average Calorie Estimation Error Based on Users' Perceptions of Selected Food Items" subtitle="Users struggled most with meal food items but were significantly more accurate with hated foods." client:load/>
 		</div>
 	</section>
 

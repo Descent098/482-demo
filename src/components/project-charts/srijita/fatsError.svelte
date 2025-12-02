@@ -67,7 +67,7 @@
     x: { domain: freqOrder, label: "Consumption Frequency →", tickRotate: -45 },
     y: { label: "↑ Average Absolute Error", grid: true },
     marks: [
-      Plot.barY(callData, { x: "frequency", y: "error", fill: d => d.error === maxError ? "#9467bd" : "#ebd8fc", tip: true }),
+      Plot.barY(callData, { x: "frequency", y: "error", fill: d => d.error === maxError ? "#9467bd" : "#e1c0ff", tip: true }),
       Plot.ruleY([0])
     ]
   });

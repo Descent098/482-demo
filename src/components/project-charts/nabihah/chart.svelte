@@ -75,7 +75,7 @@
     return Plot.plot({
         margin: 50,
         x: {
-        label: "",
+        label: "Food item",
         ticks: [],
         tickFormat: () => ""   
         },
@@ -92,7 +92,7 @@
             tip:true
         })
         ],
-        color: { legend: true },
+        color: { legend: true, scheme:"Tableau10"},
         style: { fontSize: 14, marginBottom: 60 }
     });
   }

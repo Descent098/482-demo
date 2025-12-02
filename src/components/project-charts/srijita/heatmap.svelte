@@ -10,7 +10,7 @@
 
 
   const title="Which Macronutrients Are Hardest to Estimate?"
-  const subtitle="Overall, carbohydrates are seen as the most difficult macro to estimate, specifically when it comes to food items that people consume on a weekly basis."
+  const subtitle="Overall, carbohydrates are seen as the most difficult macro to estimate, specifically when it comes to food items that people consume on a monthly basis."
   const width = 1000
   const height= 400
 
