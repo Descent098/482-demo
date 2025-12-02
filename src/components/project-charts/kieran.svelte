@@ -45,7 +45,7 @@
         Plot.dot(data, {x: "batch", y: yAxisDataField, stroke:"userID", tip:true, title: d => `${d.userID} (Batch ${d.batch}): Average Difference: ${d[yAxisDataField].toFixed(2)} ${yAxisDataField==="cals_diff"?"cals":"g"}`,}),
       ],
       color:{
-        scheme:"Set2",
+        scheme:"Tableau10",
         legend:true,
       },
       style: styleOverrides,
