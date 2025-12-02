@@ -7,7 +7,7 @@
   let plot = $state(`<div></div>`)
   let initialized = $state(false)
   const  title = "Influence of Frequency of Consumption on Perceived Nutritional Value"
-  const subtitle= "Guesses of macronutrients in foods consumed daily show a distinct 'healthier' profile: higher protein on average with lower fats, sugars, and carbs - compared to guesses of macronutrients in foods consumed less frequently. This suggests that people tend to perceive the foods they eat regularly as having healthier macronutrient proportions compared to foods eaten less often."
+  const subtitle= "Guesses of daily food macros show a relatively 'healthier' profile: higher average protein with lower fats, sugars, and carbs, suggesting people perceive regularly consumed foods as having more balanced macronutrient proportions."
 
 
 
